@@ -37,11 +37,12 @@ public class EnemyAI : MonoBehaviour
 
         if (distanceFromTarget > agent.stoppingDistance && distanceFromTarget < chaseDistance)
         {
-            agent.SetDestination(transform.position);
+            agent.SetDestination(player.transform.position);
             character.Move(agent.desiredVelocity, false, false);
         }
         else
         {
+            agent.SetDestination(transform.position);
             character.Move(Vector3.zero, false, false);
 
         }
